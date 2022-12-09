@@ -1,0 +1,80 @@
+
+<div class="container">
+    <h1>SpaceX Launch Programs</h1>
+    <div class="col-side">
+        <div class="cards">
+            <div class="card">
+                <div class="text">
+                    <h2>Filters</h2>
+                    <hr>
+                    <h4>Launch Year</h4>
+                    <hr>
+                    <div class="buttons" *ngFor="let year of years">
+                        <button class="button button"
+                        [routerLinkActive]="['buttonClick']" 
+                        #rla="routerLinkActive"
+                        [routerLink]="['/filter/'+year]"  
+                        type="button" 
+                        [value]="year" 
+                        (click)="rla.isActive ? resetResults() : filterByYear($event)">
+                        {{year}}
+                        </button>
+                       
+                    </div>
+                    
+                    <h4>Successful Launch</h4>
+                    <hr>
+                    <button class="button button"
+                        [routerLinkActive]="['buttonClick']" 
+                        #rla="routerLinkActive"
+                        [routerLink]="['/filter/launchSuccess']"  
+                        type="button" 
+                        (click)="rla.isActive ? resetResults() : filterByLaunchSuccess(true)">
+                        True
+                    </button>
+                    <button class="button button"
+                        [routerLinkActive]="['buttonClick']" 
+                        #rla="routerLinkActive"
+                        [routerLink]="['/filter/launchFailure']"  
+                        type="button" 
+                        (click)="rla.isActive ? resetResults() : filterByLaunchSuccess(false)">
+                        False
+                    </button>
+                    
+                    
+
+                    <h4>Successful Landing</h4>
+                    <hr>
+                    <button class="button button"
+                        [routerLinkActive]="['buttonClick']" 
+                        #rla="routerLinkActive"
+                        [routerLink]="['/filter/landSuccess']"  
+                        type="button" 
+                        (click)="rla.isActive ? resetResults() : filterByLandSuccess(true)">
+                        True
+                    </button>
+                    <button class="button button"
+                        [routerLinkActive]="['buttonClick']" 
+                        #rla="routerLinkActive"
+                        [routerLink]="['/filter/landFailure']"  
+                        type="button" 
+                        (click)="rla.isActive ? resetResults() : filterByLandSuccess(false)">
+                        False
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="col-launch">
+            <app-launches [viewLaunches] = "launches"></app-launches>
+        </div>
+    </div>
+
+    <div class="col-launch card">
+        <h3 class="devName">Developed By: Ashley Wortham</h3>
+    </div>
+
+</div>

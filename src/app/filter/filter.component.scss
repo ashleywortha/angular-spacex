@@ -1,0 +1,64 @@
+.container {
+    padding-right: 10px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .buttons{
+  display: inline-block;
+  }
+  .button{
+   background-color: lightgreen;
+   border: none;
+   border-radius: 5px;
+   color: black;
+   padding: 10px;
+   text-align: center;
+   display: inline-block;
+   font-size: 12px;
+   margin: 4px 4px;
+   transition-duration: 0.4s;
+
+  }
+
+  .button:hover{
+    background-color: green;
+    color:white;
+  }
+
+  .buttonClick{
+    background-color: green;
+    transition-duration: 0.4s;
+    color:white;
+  }
+
+  .buttonClick:hover{
+    background-color: lightgreen;
+    color: black;
+  }
+
+  .devName{
+    display:flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+
+  //2 columns at 700 -- sidebar spacing
+  @media only screen and (min-width:700px) {
+    .container .col-side {
+      float: left;
+      width: 25%;
+    }
+  }
+
+  //2 columns at 700 -- launch data spacing
+  @media only screen and (min-width:700px) {
+    .container .col-launch {
+      float: left;
+      width: 75%;
+    }
+  }
