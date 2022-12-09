@@ -20,6 +20,7 @@ export class FilterComponent implements OnInit{
   
   ngOnInit(): void {
     this.filter = this.route.snapshot.paramMap.get('filterName');
+    //make dynamic
     this.years=['2006', '2007', '2008', '2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020'];
     this.getFilter();
   }
@@ -52,13 +53,11 @@ export class FilterComponent implements OnInit{
   filterByYear(e:Event){
     const year = (e.target as HTMLButtonElement).value;
     this.launchService.getLaunchByYear(year).subscribe(launch => this.launches=launch);
-    // this.currentFilter = this.filterByYear(e);
   } 
 
   filterByYearRefresh(y:string){
     const year = y;
     this.launchService.getLaunchByYear(year).subscribe(launch => this.launches=launch);
-    // this.currentFilter = this.filterByYear(e);
   } 
 
   resetResults(){

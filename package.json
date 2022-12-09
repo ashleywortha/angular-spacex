@@ -1,12 +1,16 @@
 {
   "name": "spacex-app",
   "version": "0.0.0",
+  "engines": {"node": "18.12.1", "npm": "8.19.2"},
+  "start": "node server js",
+
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build -prod"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +25,8 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "bootstrap": "^5.2.3",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -38,4 +44,5 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.8.2"
   }
+
 }
