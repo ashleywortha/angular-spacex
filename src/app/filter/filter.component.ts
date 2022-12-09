@@ -13,6 +13,7 @@ export class FilterComponent implements OnInit{
   launches:any;
   years:any;
   filter:any;
+  buttonsClicked:any;
   
   constructor(private launchService: LaunchService, private router: Router, private route: ActivatedRoute){
   }
@@ -42,12 +43,11 @@ export class FilterComponent implements OnInit{
 
   filterByLaunchSuccess(b: boolean){
     this.launchService.filterByLaunchSuccess(b).subscribe(launch => this.launches=launch);
-    
+  
   }
   
   filterByLandSuccess(b: boolean){
     this.launchService.filterByLandSuccess(b).subscribe(launch => this.launches=launch);
-    
   }
 
   filterByYear(e:Event){
@@ -57,7 +57,8 @@ export class FilterComponent implements OnInit{
 
   filterByYearRefresh(y:string){
     const year = y;
-    this.launchService.getLaunchByYear(year).subscribe(launch => this.launches=launch);
+    this.launchService.getLaunchByYear(year).subscribe(launch => {this.launches=launch; console.log(launch)});
+
   } 
 
   resetResults(){

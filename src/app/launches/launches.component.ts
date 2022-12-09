@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Launch } from './launch.model';
 import { LaunchService } from './launch.service';
 
 @Component({
